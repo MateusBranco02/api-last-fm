@@ -40,4 +40,68 @@
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    gap: 20px;
+}
+
+.container-carregando {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.info-album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.img {
+    border-radius: 5px;
+}
+
+.p-artista {
+    color: #03cf62;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.container-tags {
+    display: flex;
+    color: #03cf62;
+    gap: 20px;
+}
+
+.tag {
+    border: 1px solid #03cf62;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.musicas {
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-musicas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.item-musica {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    gap: 10px;
 }

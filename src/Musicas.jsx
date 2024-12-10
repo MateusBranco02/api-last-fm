@@ -5,7 +5,7 @@ import './Musicas.css';
 
 export default function Musicas() {
     let apiKey = 'b19cdb5c459071ba668d0ef3d15e4e9d';
-    const { artista, album } = useParams();
+    const { artista, nomeDoAlbum } = useParams();
     const [musicas, setMusicas] = useState([]);
 
     useEffect(() => {
@@ -14,9 +14,9 @@ export default function Musicas() {
 
     const musicasDoArtista = async () => {
         try {
-            const url = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${apiKey}&artist=${artista}&album=${album}&format=json`;
+            const url = `https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${apiKey}&artist=${artista}&album=${nomeDoAlbum}&format=json`;
             const response = await axios.get(url);
-            console.log(response.data.album);
+            console.log(response.data.album.tracks.track);
             setMusicas(response.data.album);
         } catch (error) {
             console.error(error);
@@ -31,8 +31,13 @@ export default function Musicas() {
                 </div>
 
                 <div className='container-musicas'>
-                    <img src={musicas.image[2]?.['#text']} alt={musicas.name} />
-                    <p>Nome: {musicas.name}</p>
+                    {musicas.image ? (
+                        <>
+                            {console.log(musicas)}
+                            <img src={musicas?.image[2]['#text']} alt={musicas.name} />
+                            <p>Nome: {musicas?.name}</p>
+                        </>
+                    ) : null}
                 </div>
             </div>
         </>

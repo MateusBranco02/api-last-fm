@@ -36,7 +36,7 @@ export default function Home() {
                 <div className='container-albuns'>
                     <div className='albuns'>
                         <ul className='lista-albuns'>
-                            {albuns.map((album, key) =>
+                            {albuns.map((album, key) => (
                                 <Link to={`/musicas/${album.artist}/${album.name}`} key={key}>
                                     <li className='item-album'>
                                         <div className='container-img'>
@@ -48,7 +48,7 @@ export default function Home() {
                                         </div>
                                     </li>
                                 </Link>
-                            )}
+                            ))}
                         </ul>
                     </div>
                 </div>
